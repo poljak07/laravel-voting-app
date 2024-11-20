@@ -34,7 +34,7 @@ export default {
                 175: '43.75rem',
             },
             maxWidth: {
-                custom: '62.5rem',
+                custom: '68.5rem',
 
             },
             boxShadow: {
