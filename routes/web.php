@@ -7,6 +7,8 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::view('/idea', 'show');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
