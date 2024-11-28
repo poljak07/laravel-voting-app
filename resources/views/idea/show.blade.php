@@ -20,16 +20,16 @@
 
                 <div class="w-full mx-2 md:mx-4">
                     <h4 class="text-xl font-semibold">
-                        <a href="#" class="hover:underline"> A random title can go here</a>
+                        <a href="#" class="hover:underline"> {{ $idea->title }}</a>
                     </h4>
                     <div class="text-gray-600 mt-3">
-                        Sed tempor massa ac felis lobortis tincidunt. Duis odio eros, sodales sed turpis dignissim, gravida feugiat leo. Maecenas mattis massa quam, vitae lobortis arcu bibendum sit amet. Mauris iaculis tempor luctus. Cras ut libero pellentesque, egestas urna ut, efficitur orci. Pellentesque vestibulum viverra dignissim. Morbi semper enim tincidunt dictum ultrices. Proin non justo ac nibh faucibus vulputate. Pellentesque lacus tellus, consequat eu pretium ut, dictum sit amet orci.
+                {{ $idea->description }}
                     </div>
                     <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
                         <div class="flex items-center text-xs text-gray-400 font-semibold space-x-2">
-                            <div class="md:block hidden  font-bold text-gray-900">John Doe</div>
+                            <div class="md:block hidden  font-bold text-gray-900">{{ $idea->user->name }}</div>
                             <div class="md:block hidden ">&bull;</div>
-                            <div>10 hours ago</div>
+                            <div>{{ $idea->created_at->diffForHumans() }}</div>
                             <div>&bull;</div>
                             <div>Category 1</div>
                             <div>&bull;</div>
@@ -240,9 +240,6 @@
                     </div>
 
                     <div class="w-full md:mx-4">
-                    <!--     <h4 class="text-xl font-semibold">
-                            <a href="#" class="hover:underline"> A random title can go here</a>
-                        </h4> -->
                         <div class="text-gray-600 mt-3">
                             Sed tempor massa ac felis lobortis tincidunt. Duis odio eros, sodales sed turpis dignissim, gravida feugiat leo. Maecenas mattis massa quam, vitae lobortis arcu bibendum sit amet. Mauris iaculis tempor luctus. Cras ut libero pellentesque, egestas urna ut, efficitur orci. Pellentesque vestibulum viverra dignissim. Morbi semper enim tincidunt dictum ultrices. Proin non justo ac nibh faucibus vulputate. Pellentesque lacus tellus, consequat eu pretium ut, dictum sit amet orci.
                         </div>
