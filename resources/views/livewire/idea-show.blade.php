@@ -53,14 +53,23 @@
                         </div>
                         <div class="flex items-center md:hidden mt-4 md:mt-0">
                             <div class="bg-gray-100 text-center rounded-xl h-10 px-4 py-2 pr-8">
-                                <div class="text-sm font-bold leading-none">{{ $votesCount }}</div>
+                                <div class="text-sm font-bold leading-none  @if($hasVoted) text-blue @endif"">{{ $votesCount }}</div>
                                 <div class="text-xxs font-semibold leading-none text-gray-400">Votes</div>
                             </div>
+                        @if($hasVoted)
+                            <button
+                                class="w-20 bg-blue text-white border border-blue font-bold text-xxs uppercase rounded-xl hover:blue-hover transition duration-150
+                                ease-in px-4 py-3 -mx-4">
+                                Voted
+                            </button>
+                        @else
                             <button
                                 class="w-20 bg-gray-200 border border-gray-200 font-bold text-xxs uppercase rounded-xl hover:border-gray-400 transition duration-150
                                 ease-in px-4 py-3 -mx-4">
                                 Vote
                             </button>
+                        @endif
+
                         </div>
 
                     </div>
@@ -209,16 +218,25 @@
 
         <div class="hidden md:flex items-center space-x-3 ">
             <div class="bg-white font-semibold text-center rounded-xl px-3 py-2">
-                <div class="text-xl leading-snug">{{ $votesCount }}</div>
+                <div class="text-xl leading-snug @if($hasVoted) text-blue @endif">{{ $votesCount }}</div>
                 <div class="text-gray-400 text-xs leading-none">Votes</div>
             </div>
-
-            <button
-                type="button"
-                class="w-32 h-11 flex items-center justify-center uppercase text-xs bg-gray-200
+    @if($hasVoted)
+                <button
+                    type="button"
+                    class="w-32 h-11 flex items-center justify-center uppercase text-xs bg-blue
+                            font-semibold rounded-xl border border-blue hover:border-blue-hover text-white transition duration-150 ease-in px-6 py-3">
+                    <span>Voted</span>
+                </button>
+            @else
+                <button
+                    type="button"
+                    class="w-32 h-11 flex items-center justify-center uppercase text-xs bg-gray-200
                             font-semibold rounded-xl border border-gray-200 hover:border-gray-400 transition duration-150 ease-in px-6 py-3">
-                <span>Vote</span>
-            </button>
+                    <span>Vote</span>
+                </button>
+            @endif
+
         </div>
     </div>
 
