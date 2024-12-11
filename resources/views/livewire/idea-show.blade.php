@@ -11,7 +11,7 @@
 
                 <div class="w-full mx-2 md:mx-4">
                     <h4 class="text-xl font-semibold">
-                        <a href="#" class="hover:underline"> {{ $idea->title }}</a>
+                         {{ $idea->title }}
                     </h4>
                     <div class="text-gray-600 mt-3">
                         {{ $idea->description }}
