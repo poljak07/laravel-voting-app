@@ -78,14 +78,14 @@
                 <button
                     type="submit"
                     class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue
-                        font-semibold  text-white rounded-xl border border-gray-200 hover:border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
+                        font-semibold  text-white rounded-xl border border-gray-200 hover:border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3 disabled:opacity-50">
 
                     <span class="ml-1">Update</span>
                 </button>
             </div>
             <div>
                 <label for="" class="font-normal inline-flex items-center">
-                    <input type="checkbox" name="notify-voters" class="rounded bg-gray-200">
+                    <input wire:model.live="notifyAllVoters" type="checkbox" name="notify_voters" class="rounded bg-gray-200">
                     <span class="ml-2">Notify all voters</span>
                 </label>
             </div>
