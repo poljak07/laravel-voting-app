@@ -64,4 +64,12 @@ class User extends Authenticatable
                 .'&d=mp';
     }
 
+    public function isAdmin()
+    {
+        return in_array($this->email, [
+           'test@test.com',
+           'johndoe@gmail.com',
+        ]);
+    }
+
 }
