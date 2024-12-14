@@ -8,8 +8,11 @@
         "php": "^8.2",
         "cviebrock/eloquent-sluggable": "^11.0",
         "laravel/framework": "^11.9",
+        "laravel/horizon": "*",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.5"
+        "livewire/livewire": "^3.5",
+        "phpredis/phpredis": "^6.1",
+        "predis/predis": "^2.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",
