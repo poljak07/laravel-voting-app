@@ -47,6 +47,7 @@
                                     @keydown.escape.window="isOpen = false"
 
                                     class="absolute text-left w-44 font-semibold bg-white shadow-dialog rounded-xl py-3 z-10 md:ml-8 top-8 md:top-6 right-0 md:left-0">
+                                @can('update', $idea)
                                     <li><a
                                             href="#"
                                             @click="
@@ -55,6 +56,7 @@
                                             "
                                             class="hover:bg-gray-100 px-5 py-3 block"
                                         >Edit Idea</a></li>
+                                    @endcan
                                     <li><a href="#" class="hover:bg-gray-100 px-5 py-3 block">Delete Idea</a></li>
                                     <li><a href="#" class="hover:bg-gray-100 px-5 py-3 block">Mark as Spam</a></li>
                                 </ul>
