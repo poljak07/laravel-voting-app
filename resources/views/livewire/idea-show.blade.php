@@ -57,7 +57,16 @@
                                             class="hover:bg-gray-100 px-5 py-3 block"
                                         >Edit Idea</a></li>
                                     @endcan
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 block">Delete Idea</a></li>
+                                    @can('delete', $idea)
+                                        <li><a
+                                                href="#"
+                                                @click="
+                                            isOpen = false
+                                            $dispatch('custom-show-delete-modal')
+                                            "
+                                                class="hover:bg-gray-100 px-5 py-3 block"
+                                            >Delete Idea</a></li>
+                                    @endcan
                                     <li><a href="#" class="hover:bg-gray-100 px-5 py-3 block">Mark as Spam</a></li>
                                 </ul>
                             </div>
