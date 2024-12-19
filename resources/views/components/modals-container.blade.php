@@ -1,7 +1,5 @@
 @can('update', $idea)
-    <livewire:edit-idea
-        :idea="$idea"
-    />
+    <livewire:edit-idea :idea="$idea"/>
 @endcan
 
 @can('delete', $idea)
