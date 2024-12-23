@@ -5,7 +5,13 @@
             isOpen = false
         })
 
-        Livewire.on('message.processed', (message, component) => {
+        Livewire.hook('message.processed', (message, component) => {
+            {{-- if (message.updateQueue[0].method === 'gotoPage' || message.updateQueue[0].method === 'nextPage' || message.updateQueue[0].method === 'previousPage') { --}}
+            if (['gotoPage', 'previousPage', 'nextPage'].includes(message.updateQueue[0].method)) {
+                const firstComment = document.querySelector('.comment-container:first-child')
+                firstComment.scrollIntoView({ behavior: 'smooth'})
+            }
+
             if (
                 message.serverMemo.events?.some(
                     (event) => event.event === 'commentWasAdded'
