@@ -17,7 +17,8 @@ class IdeaShow extends Component
         'ideaWasUpdated',
         'ideaWasMarkedAsSpam',
         'ideaWasMarkedAsNotSpam',
-        'commentWasAdded'
+        'commentWasAdded',
+        'commentWasDeleted',
     ];
 
     public function mount(Idea $idea, $votesCount)
@@ -26,6 +27,10 @@ class IdeaShow extends Component
         $this->votesCount = $votesCount;
         $this->hasVoted = $idea->isVotedByUser(auth()->user());
 
+    }
+    public function commentWasDeleted()
+    {
+        $this->idea->refresh();
     }
 
     public function commentWasAdded()

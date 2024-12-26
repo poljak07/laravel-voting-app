@@ -17,4 +17,8 @@
 @auth
     <livewire:edit-comment  />
 
-    @endauth
+@endauth
+
+@auth
+    <livewire:delete-comment />
+@endauth
