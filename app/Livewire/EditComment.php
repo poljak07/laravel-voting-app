@@ -21,7 +21,7 @@ class EditComment extends Component
         $this->comment = Comment::findOrFail($commentId);
         $this->body = $this->comment->body;
 
-        $this->dispatch('editCommentWasSet');
+        $this->dispatch('editCommentWasSet', 'Comment is successfully edited!');
     }
 
     public function updateComment()

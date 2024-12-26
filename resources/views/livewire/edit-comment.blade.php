@@ -1,17 +1,17 @@
 <div
     x-cloak
-    x-data="{ isOpen: true }"
+    x-data="{ isOpen: false }"
     x-show="isOpen"
     @keydown.escape.window="isOpen = false"
     x-init="
         Livewire.on('commentWasUpdated', () => {
             isOpen = true
-        })
+        });
 
         Livewire.on('editCommentWasSet', () => {
             isOpen = true
             $nextTick(() => $refs.editComment.focus())
-        })
+        });
     "
     class="fixed z-10 inset-0 overflow-y-auto"
     aria-labelledby="modal-title"

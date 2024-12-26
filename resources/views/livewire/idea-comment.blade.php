@@ -45,8 +45,9 @@
                                         <a
                                             href="#"
                                             @click.prevent="
-                                        isOpen = false
-                                    "
+                                                isOpen = false;
+                                                Livewire.dispatch('setEditComment', { commentId: {{ $comment->id }} })
+                                            "
                                             class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3"
                                         >
                                             Edit Comment

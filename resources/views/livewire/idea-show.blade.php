@@ -8,7 +8,6 @@
                         <img src="{{ $idea->user->getAvatar()  }}" alt="avatar" class="w-14 h-14 rounded-xl">
                     </a>
                 </div>
-
                 <div class="w-full mx-2 md:mx-4">
                     <h4 class="text-xl font-semibold">
                          {{ $idea->title }}
@@ -106,7 +105,7 @@
                         </div>
                         <div class="flex items-center md:hidden mt-4 md:mt-0">
                             <div class="bg-gray-100 text-center rounded-xl h-10 px-4 py-2 pr-8">
-                                <div class="text-sm font-bold leading-none  @if($hasVoted) text-blue @endif"">{{ $votesCount }}</div>
+                                <div class="text-sm font-bold leading-none  @if($hasVoted) text-blue @endif">{{ $votesCount }}</div>
                                 <div class="text-xxs font-semibold leading-none text-gray-400">Votes</div>
                             </div>
                         @if($hasVoted)
