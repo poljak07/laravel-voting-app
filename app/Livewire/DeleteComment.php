@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class DeleteComment extends Component
 {
-    public Comment $comment;
+    public ?Comment $comment;
 
     protected $listeners = ['setDeleteComment'];
 
@@ -23,6 +23,7 @@ class DeleteComment extends Component
             abort(Response::HTTP_FORBIDDEN);
         }
         Comment::destroy($this->comment->id);
+        $this->comment = null;
         $this->dispatch('commentWasDeleted', 'Comment was deleted!');
     }
 
