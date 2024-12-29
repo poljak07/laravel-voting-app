@@ -12,24 +12,16 @@
                 firstComment.scrollIntoView({ behavior: 'smooth'})
             }
 
-            if (
-                message.serverMemo.events?.some(
-                    (event) => event.event === 'commentWasAdded'
-                ) && component.fingerprint.name === 'idea-comments'
-            ) {
-                const lastComment = document.querySelector('.comment-container:last-child');
-                if (lastComment) {
-                    lastComment.scrollIntoView({ behavior: 'smooth' });
-                    lastComment.classList.add('bg-green-50');
-                    setTimeout(() => {
-                        lastComment.classList.remove('bg-green-50');
-                    }, 5000);
-                }
+            if (['commentWasAdded', 'statusWasUpdated'].includes(message.updateQueue[0].payload.event)
+             && message.component.fingerprint.name === 'idea-comments') {
+                const lastComment = document.querySelector('.comment-container:last-child')
+                lastComment.scrollIntoView({ behavior: 'smooth'})
+                lastComment.classList.add('bg-green-50')
+                setTimeout(() => {
+                    lastComment.classList.remove('bg-green-50')
+                }, 5000)
             }
         })
-
-
-
     "
     class="relative"
 >

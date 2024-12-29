@@ -32,7 +32,7 @@ class CommentFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'user_id' => $this->faker->numberBetween(1, 20),
-                'status' => 1,
+                'status_id' => 1,
             ];
         });
     }
