@@ -22,15 +22,135 @@
             @if (Route::has('login'))
                 <div class="px-6 py-4">
                     @auth
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+                        <div class="flex items-center space-x-4">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
 
-                            <a href="route('logout')"
-                                             onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </a>
-                        </form>
+                                <a href="route('logout')"
+                                                 onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </a>
+                            </form>
+                            <div x-data="{isOpen: false}" class="relative">
+                                <button @click="isOpen = !isOpen">
+                                    <svg class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                                    </svg>
+                                    <div class="absolute rounded-full bg-red text-white text-xxs w-6 h-6 flex justify-center items-center border-2 -top-1 -right-1"
+                                         >8</div>
+                                </button>
+                                <ul
+                                    x-show.transition.origin.top="isOpen"
+                                    @click.away="isOpen = false"
+                                    x-cloak
+                                    @keydown.escape.window="isOpen = false"
+                                    class="absolute text-left text-gray-700 text-sm w-76 md:w-96 bg-white shadow-dialog rounded-xl max-h-128 overflow-y-auto z-10 -right-28
+                                    md:-right-12"
+                                >
+                                <li><a
+                                                href="#"
+                                                @click="
+                                            isOpen = false
+                                            $dispatch('custom-show-edit-modal')
+                                            "
+                                                class="flex hover:bg-gray-100 px-5 py-3"
+                                            ><img src="https://www.gravatar.com/avatar/a768eb8f2b98bf3efd7eefb98cf3321b?s=200&d=mp" class="rounded-xl w-10 h-10" alt="avatar">
+                                        <div class="ml-4">
+                                            <div>
+                                                <span class="font-semibold">Username</span>
+                                                commented on
+                                                <span class="font-semibold">This is my idea </span>:
+                                                <span>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde!"</span>
+                                            </div>
+                                            <div class="text-xs text-gray-500 mt-2">1 hour ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                    <li><a
+                                            href="#"
+                                            @click="
+                                            isOpen = false
+                                            $dispatch('custom-show-edit-modal')
+                                            "
+                                            class="flex hover:bg-gray-100 px-5 py-3"
+                                        ><img src="https://www.gravatar.com/avatar/a768eb8f2b98bf3efd7eefb98cf3321b?s=200&d=mp" class="rounded-xl w-10 h-10" alt="avatar">
+                                            <div class="ml-4">
+                                                <div>
+                                                    <span class="font-semibold">Username</span>
+                                                    commented on
+                                                    <span class="font-semibold">This is my idea </span>:
+                                                    <span>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde!"</span>
+                                                </div>
+                                                <div class="text-xs text-gray-500 mt-2">1 hour ago</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a
+                                            href="#"
+                                            @click="
+                                            isOpen = false
+                                            $dispatch('custom-show-edit-modal')
+                                            "
+                                            class="flex hover:bg-gray-100 px-5 py-3"
+                                        ><img src="https://www.gravatar.com/avatar/a768eb8f2b98bf3efd7eefb98cf3321b?s=200&d=mp" class="rounded-xl w-10 h-10" alt="avatar">
+                                            <div class="ml-4">
+                                                <div>
+                                                    <span class="font-semibold">Username</span>
+                                                    commented on
+                                                    <span class="font-semibold">This is my idea </span>:
+                                                    <span>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde!"</span>
+                                                </div>
+                                                <div class="text-xs text-gray-500 mt-2">1 hour ago</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a
+                                            href="#"
+                                            @click="
+                                            isOpen = false
+                                            $dispatch('custom-show-edit-modal')
+                                            "
+                                            class="flex hover:bg-gray-100 px-5 py-3"
+                                        ><img src="https://www.gravatar.com/avatar/a768eb8f2b98bf3efd7eefb98cf3321b?s=200&d=mp" class="rounded-xl w-10 h-10" alt="avatar">
+                                            <div class="ml-4">
+                                                <div>
+                                                    <span class="font-semibold">Username</span>
+                                                    commented on
+                                                    <span class="font-semibold">This is my idea </span>:
+                                                    <span>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde!"</span>
+                                                </div>
+                                                <div class="text-xs text-gray-500 mt-2">1 hour ago</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a
+                                            href="#"
+                                            @click="
+                                            isOpen = false
+                                            $dispatch('custom-show-edit-modal')
+                                            "
+                                            class="flex hover:bg-gray-100 px-5 py-3"
+                                        ><img src="https://www.gravatar.com/avatar/a768eb8f2b98bf3efd7eefb98cf3321b?s=200&d=mp" class="rounded-xl w-10 h-10" alt="avatar">
+                                            <div class="ml-4">
+                                                <div class="line-clamp-6">
+                                                    <span class="font-semibold">Username</span>
+                                                    commented on
+                                                    <span class="font-semibold">This is my idea </span>:
+                                                    <span>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde!"</span>
+                                                </div>
+                                                <div class="text-xs text-gray-500 mt-2">1 hour ago</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="border-t border-gray-300 text-center">
+                                        <button
+                                            href="#"
+                                            class="w-full block font-semibold hover:bg-gray-100 px-5 py-4">Mark all as read</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     @else
                         <a
                             href="{{ route('login') }}"
