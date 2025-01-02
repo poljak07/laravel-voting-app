@@ -6,6 +6,12 @@
     .bg-gray-200 {
         background-color: #e5e7eb;
     }
+    .bg-gray-500 {
+        background-color: #677688;
+    }
+    .bg-gray-600 {
+        background-color: #4a5a6a;
+    }
 }
 
 [x-cloak] {

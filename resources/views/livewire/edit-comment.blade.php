@@ -21,7 +21,7 @@
     <div class="flex items-end justify-center min-h-screen">
         <div
             x-show="isOpen"
-            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+            class="fixed inset-0 bg-gray-500 opacity-75 transition-opacity"
             aria-hidden="true">
         </div>
 
