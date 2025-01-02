@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
 
         Status::factory()->create(['name' => 'Open']);
         Status::factory()->create(['name' => 'Considering']);
-        Status::factory()->create(['name' => 'In progress']);
+        Status::factory()->create(['name' => 'In Progress']);
         Status::factory()->create(['name' => 'Implemented']);
         Status::factory()->create(['name' => 'Closed']);
 
