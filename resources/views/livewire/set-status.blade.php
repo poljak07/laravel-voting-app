@@ -2,7 +2,10 @@
     x-data="{isOpen: false }"
     class="relative"
     x-init="
-    window.livewire.on('statusWasUpdated', () => {
+    Livewire.window.livewire.on('statusWasUpdated', () => {
+        isOpen = false
+    })
+    Livewire.window.livewire.on('statusWasUpdatedError', () => {
         isOpen = false
     })
     "

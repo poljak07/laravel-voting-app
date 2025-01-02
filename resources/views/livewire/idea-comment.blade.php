@@ -24,7 +24,8 @@
                     </h4>
                 @endif
                 <div class="mt-4 md:mt-0">
-                    {{ $comment->body }}
+                    {!! nl2br(e($comment->body)) !!}
+
                 </div>
             </div>
 
